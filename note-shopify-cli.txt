@@ -1,0 +1,26 @@
+- shopify theme pull -h: Tải (pull) theme từ Shopify store về máy local. 
+  Lệnh này giúp đồng bộ code theme từ store về môi trường phát triển local để chỉnh sửa.
+  (-h = help)
+
+- shopify theme pull -e development: Tải theme từ Shopify store về máy local, 
+  sử dụng cấu hình từ environment "development" được định nghĩa trong file shopify.theme.toml. 
+  Lệnh này sẽ pull theme từ store URL đã được cấu hình trong [environments.development] 
+  (ví dụ: store = "https://demo-123483729127387293872387505.myshopify.com/").
+
+- shopify theme dev -e development: Khởi động môi trường development server local cho theme, 
+  sử dụng cấu hình từ environment "development" được định nghĩa trong file shopify.theme.toml.
+  Lệnh này tạo một server local để preview và chỉnh sửa theme real-time, đồng bộ các thay đổi 
+  từ máy local lên store development (https://demo-123483729127387293872387505.myshopify.com/).
+  Khi chạy lệnh này, bạn có thể xem preview theme qua localhost và mọi thay đổi sẽ tự động 
+  được cập nhật lên store.
+
+- shopify theme push -e development: Đẩy (push) theme từ máy local lên Shopify store, 
+  sử dụng cấu hình từ environment "development" được định nghĩa trong file shopify.theme.toml.
+  Lệnh này sẽ upload toàn bộ code theme từ máy local lên store development 
+  (https://demo-123483729127387293872387505.myshopify.com/), ghi đè lên theme hiện tại trên store.
+  Cẩn thận khi dùng lệnh này vì nó sẽ thay thế toàn bộ theme trên store bằng version local của bạn.
+
+- shopify theme pull -d: Tải (pull) theme từ Shopify store về máy local và XÓA (delete) 
+  các file local không tồn tại trên store. Flag -d (--delete) đảm bảo rằng theme local 
+  sẽ là bản sao chính xác 100% của theme trên store bằng cách xóa bỏ những file thừa 
+  ở local mà không có trên store. Hữu ích khi muốn đồng bộ hoàn toàn theme local với store.
