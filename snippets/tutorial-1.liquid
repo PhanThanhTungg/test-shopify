@@ -36,8 +36,30 @@
 <p>{{ number }}</p>
 <p>{{ float }}</p>
 <p>{{ boolean }}</p>
-<p>{{ array }}</p>
+{{ array }}
 <p>{{ object }}</p>
 {% if undefinedVariable == null %}
   <p>undefinedVariable is equal to null</p>
 {% endif %}
+
+{{ product.tags }}
+{% for tag in product.tags %}
+  {{ tag }}
+{% endfor %}
+<br>
+<p>product.title: {{ product.title }}</p>
+
+<!-- assign html: Chỉ gán giá trị đơn giản-->
+{%
+  assign html = "
+  <p>Hello html</p>
+  "
+%}
+{{ html }}
+
+<!-- capture html: Gán được giá trị động, có thể sử dụng các biến -->
+{% capture html %}
+  <p>Hello html - {{ product.title }}</p>
+{% endcapture %}
+{{ html }}
+
