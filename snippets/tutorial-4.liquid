@@ -1,0 +1,110 @@
+{% comment %}
+  paginate: Tag dùng để phân trang một mảng/collection
+  - collection.products: Mảng sản phẩm cần phân trang
+  - by 5: Số lượng items hiển thị trên mỗi trang (5 sản phẩm/trang)
+  - Tạo ra object 'paginate' chứa thông tin phân trang
+{% endcomment %}
+{% paginate collection.products by 5 %}
+  {% comment %}
+    Vòng lặp qua các sản phẩm trên trang hiện tại
+    - collection.products trong paginate block chỉ chứa items của trang hiện tại
+    - Ví dụ: Nếu có 20 sản phẩm, trang 1 chỉ loop 5 sản phẩm đầu tiên
+  {% endcomment %}
+  {% for product in collection.products %}
+    <p>{{ product.title }}</p>
+  {% endfor %}
+
+  {% comment %}
+    default_pagination: Filter tạo HTML phân trang tự động
+    - paginate object chứa: current_page, pages, items, previous, next...
+    - Tạo ra các link: Previous, 1, 2, 3, Next
+    - Tự động highlight trang hiện tại
+  {% endcomment %}
+  {{ paginate | default_pagination}}
+{% endpaginate %}
+
+<p>----------1----------</p>
+
+{% assign num = 4 %}
+
+{% assign newNum = num | plus: 1 %}
+{{ newNum }}
+
+{% assign newNum = num | minus: 1 %}
+{{ newNum }}
+
+{% assign newNum = num | times: 2 %}
+{{ newNum }}
+
+{% assign newNum = num | divided_by: 2 %}
+{{ newNum }}
+
+{% assign newNum = num | modulo: 2 %}
+{{ newNum }}
+
+<p>----------1.1----------</p>
+ 
+{% assign neNum = -2 %}
+{{ neNum | abs }}
+
+{% assign floatNum = 2.5 %}
+{{ floatNum | round }}
+
+{% assign atLeastNum = 10 %}
+{{ atLeastNum | at_least: 5 }}
+{% comment %} at_least: lấy giá trị lớn nhất giữa 2 số {% endcomment %}
+
+{% assign atMostNum = 10 %}
+{{ atMostNum | at_most: 5 }}
+{% comment %} at_most: lấy giá trị nhỏ nhất giữa 2 số {% endcomment %}
+
+
+
+<p>----------2----------</p>
+
+{% assign numStr = "2" %}
+{% assign num = numStr | plus: 0 %}
+{% comment %} | plus co tác dụng chuyển đổi string thành number {% endcomment %}
+{% if num > 1 %}
+<p>num > 1</p>
+{% endif %}
+
+<p>----------3: string filters----------</p>
+
+{% assign string = "Hello World" %}
+{{ string | upcase }} <br>  
+{% comment %} upcase: chuyển tất cả ký tự thành chữ hoa {% endcomment %}
+{{ string | downcase }} <br>
+{% comment %} downcase: chuyển tất cả ký tự thành chữ thường {% endcomment %}
+{{ string | capitalize }} <br>
+{% comment %} capitalize: viết hoa chữ cái đầu tiên {% endcomment %}
+{{ string | truncate: 4 }} <br>
+{% comment %} truncate: cắt chuỗi theo số ký tự, thêm "..." {% endcomment %}
+{{ string | truncatewords: 1 }} <br>
+{% comment %} truncatewords: cắt chuỗi theo số từ, thêm "..." {% endcomment %}
+{{ string | replace: "World", "Liquid" }} <br>
+{% comment %} replace: thay thế tất cả chuỗi tìm thấy {% endcomment %}
+{{ string | remove: "World" }} <br>
+{% comment %} remove: xóa tất cả chuỗi tìm thấy {% endcomment %}
+{{ string | remove_first: "Hello" }} <br>
+{% comment %} remove_first: xóa chuỗi đầu tiên tìm thấy {% endcomment %}
+{{ string | remove_last: "World" }} <br>
+{% comment %} remove_last: xóa chuỗi cuối cùng tìm thấy {% endcomment %}
+{{ string | remove_first: "Hello" }} <br>
+
+{{ string | downcase | append: " extra " }}
+
+{% comment %} new line to br  {% endcomment %}
+{% assign multipleLines = "
+line 1
+line 2
+line 3 " %}
+{{ multipleLines | newline_to_br }}
+
+
+
+
+
+
+
+

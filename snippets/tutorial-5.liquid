@@ -1,0 +1,43 @@
+<p>----------1: array filters----------</p>
+
+{% assign array = "apple, banana, cherry" | split: ", " %}
+{% for item in array %}
+  <p> {{ forloop.index }} - {{ item }}</p>
+{% endfor %}
+
+{% assign productTitles = collection.products | map: "title" |  reverse %}
+{% comment %} map: lấy giá trị của thuộc tính từ mỗi phần tử trong mảng {% endcomment %}
+{% comment %} reverse: đảo ngược thứ tự mảng {% endcomment %}
+{{ productTitles | join: ' - ' }} <br>
+{% comment %} join: nối các phần tử mảng thành chuỗi với ký tự phân cách {% endcomment %}
+{{ productTitles | first }} <br>
+{% comment %} first: lấy phần tử đầu tiên của mảng {% endcomment %}
+{{ productTitles | last }} <br>
+{% comment %} last: lấy phần tử cuối cùng của mảng {% endcomment %}
+{{ productTitles | size }} <br>
+{% comment %} size: đếm số phần tử trong mảng {% endcomment %}
+{{ productTitles | sort | join: ' - ' }} <br>
+{% comment %} sort: sắp xếp mảng theo thứ tự alphabet {% endcomment %}
+{{ productTitles | uniq | join: ' - ' }} <br>
+{% comment %} uniq: loại bỏ các phần tử trùng lặp trong mảng {% endcomment %}
+{{ productTitles | slice: 0, 2 | join: ' - ' }} <br>
+{% comment %} slice: cắt mảng từ vị trí bắt đầu, lấy số phần tử chỉ định {% endcomment %}
+{{ productTitles | slice: 1 }} <br>
+{% comment %} slice: lấy 1 phần tử tại vị trí chỉ định {% endcomment %}
+{{ productTitles | slice: -1 }} <br>
+{% comment %} slice: -1 lấy phần tử cuối cùng {% endcomment %}
+
+<p>----------2: example----------</p>
+
+{% assign priceSortedItem = collection.products | sort: 'price' %}
+{% for item in priceSortedItem limit: 5 %}
+  <p> {{ forloop.index }} - {{ item.title }} - {{ item.price | money }}</p>
+{% endfor %}
+
+{% assign totalPrice = collection.products | map: 'price' | sum %}
+<p>Total price: {{ totalPrice | money }}</p>
+
+{% assign snowBoards = collection.products | where:'title', 'The Complete Snowboard' %}
+{% for item in snowBoards %}
+  <p> {{ forloop.index }} - {{ item.title }} - {{ item.price | money }}</p>
+{% endfor %}

@@ -1,0 +1,19 @@
+{% for tag in product.tags %}
+  <p
+  style = "
+      {% if forloop.first  %} color: red;
+      {% elsif forloop.last %} color: blue;
+      {% else %} color: green;
+    {% endif %}
+  "
+  >{{ tag }} - {{ forloop.index }}</p>
+{% endfor %}
+
+<p>----------1----------</p>
+
+{% for i in (11..15) %}
+  <p> {{ forloop.index }} - hello {{ i }}</p>
+{% endfor %}
+{% comment %} Vòng lăp giới hạn 50 lần {% endcomment %}
+
+{{ collection.products.size }}
