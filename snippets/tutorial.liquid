@@ -1,0 +1,43 @@
+<p>Hello from tutorial.liquid</p>
+
+{% assign demoVariable = "hello from demoVariable don't have -" %}
+<p>{{ demoVariable }}</p>
+{% comment %}
+  Không có dấu gạch ngang (-) trong Liquid tags:
+  - Giữ nguyên khoảng trắng (whitespace) xung quanh tag
+  - Output sẽ bao gồm các khoảng trắng, xuống dòng trước và sau tag
+{% endcomment %}
+
+{%- assign demoVariable = "hello from demoVariable have -" -%}
+<p>{{- demoVariable -}}</p>
+{% comment %}
+  Có dấu gạch ngang (-) trong Liquid tags:
+  - Dấu {%- loại bỏ khoảng trắng bên trái của tag
+  - Dấu -%} loại bỏ khoảng trắng bên phải của tag
+  - Dấu {{- loại bỏ khoảng trắng bên trái của output
+  - Dấu -}} loại bỏ khoảng trắng bên phải của output
+  - Kết quả: HTML được render gọn gàng hơn, không có khoảng trắng thừa
+{% endcomment %}
+
+<br><p>---------------variable---------------</p>
+{% assign string = "string" %}
+{% assign number = 123 %}
+{% assign float = 123.456 %}
+{% assign boolean = true %}
+{% assign array = "apple, banana, cherry" %}
+{% assign object = "name: John, age: 30, city: New York" %}
+{% assign null = null %}
+{% assign empty = empty %}
+{% assign undefined = undefined %}
+{% assign nil = nil %}
+{% assign blank = blank %}
+
+<p>{{ string }}</p>
+<p>{{ number }}</p>
+<p>{{ float }}</p>
+<p>{{ boolean }}</p>
+<p>{{ array }}</p>
+<p>{{ object }}</p>
+{% if undefinedVariable == null %}
+  <p>undefinedVariable is equal to null</p>
+{% endif %}
