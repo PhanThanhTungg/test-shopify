@@ -11,12 +11,6 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "1760675210533d21fb": {
-      "type": "apps",
-      "settings": {
-        "include_margins": true
-      }
-    },
     "footer": {
       "type": "footer",
       "settings": {
@@ -36,7 +30,6 @@
     }
   },
   "order": [
-    "1760675210533d21fb",
     "footer"
   ]
 }
