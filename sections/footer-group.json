@@ -13,20 +13,6 @@
   "sections": {
     "1760674211f6b70960": {
       "type": "apps",
-      "blocks": {
-        "tung_traning_product_info_button_VCGpe8": {
-          "type": "shopify://apps/tung_traning/blocks/product_info_button/0199f017-3b9f-78e3-be1b-c77e9c847d41",
-          "settings": {
-            "button_text": "View Product Info",
-            "button_color": "#e65b1d",
-            "text_color": "#ffffff",
-            "info_bg_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "tung_traning_product_info_button_VCGpe8"
-      ],
       "settings": {
         "include_margins": true
       }
