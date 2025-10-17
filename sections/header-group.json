@@ -56,19 +56,25 @@
     },
     "17606822766f798ab7": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "17606822853efb8492": {
+      "type": "apps",
       "blocks": {
-        "tung_traning_product_info_button_kByden": {
+        "tung_traning_product_info_button_Kw7q6e": {
           "type": "shopify://apps/tung_traning/blocks/product_info_button/0199f017-3b9f-78e3-be1b-c77e9c847d41",
           "settings": {
             "button_text": "View Product Info",
-            "button_color": "#0066cc",
+            "button_color": "#202529",
             "text_color": "#ffffff",
             "info_bg_color": "#ffffff"
           }
         }
       },
       "block_order": [
-        "tung_traning_product_info_button_kByden"
+        "tung_traning_product_info_button_Kw7q6e"
       ],
       "settings": {
         "include_margins": true
@@ -78,6 +84,7 @@
   "order": [
     "announcement-bar",
     "header",
-    "17606822766f798ab7"
+    "17606822766f798ab7",
+    "17606822853efb8492"
   ]
 }
