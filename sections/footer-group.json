@@ -11,23 +11,14 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "1760672864a5e28b58": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
     "1760672448cb844aba": {
       "type": "apps",
-      "blocks": {
-        "tung_traning_product_info_button_VhCnX6": {
-          "type": "shopify://apps/tung_traning/blocks/product_info_button/0199f017-3b9f-78e3-be1b-c77e9c847d41",
-          "settings": {
-            "product": "",
-            "button_text": "View Product Info",
-            "button_color": "#0066cc",
-            "text_color": "#ffffff",
-            "info_bg_color": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "tung_traning_product_info_button_VhCnX6"
-      ],
       "settings": {
         "include_margins": true
       }
@@ -51,6 +42,7 @@
     }
   },
   "order": [
+    "1760672864a5e28b58",
     "1760672448cb844aba",
     "footer"
   ]
